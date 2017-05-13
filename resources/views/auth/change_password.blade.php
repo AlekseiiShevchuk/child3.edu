@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">Change password</h3>
+    <h3 class="page-title">Смена пароля</h3>
 
     @if(session('success'))
         <!-- If password successfully show message -->
@@ -14,14 +14,11 @@
         {!! Form::open(['method' => 'PATCH', 'route' => ['auth.change_password']]) !!}
         <!-- If no success message in flash session show change password form  -->
         <div class="panel panel-default">
-            <div class="panel-heading">
-                @lang('quickadmin.qa_edit')
-            </div>
 
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-12 form-group">
-                        {!! Form::label('current_password', 'Current password*', ['class' => 'control-label']) !!}
+                        {!! Form::label('current_password', 'Текущий пароль*', ['class' => 'control-label']) !!}
                         {!! Form::password('current_password', ['class' => 'form-control', 'placeholder' => '']) !!}
                         <p class="help-block"></p>
                         @if($errors->has('current_password'))
@@ -34,7 +31,7 @@
 
                 <div class="row">
                     <div class="col-xs-12 form-group">
-                        {!! Form::label('new_password', 'New password*', ['class' => 'control-label']) !!}
+                        {!! Form::label('new_password', 'Новый пароль*', ['class' => 'control-label']) !!}
                         {!! Form::password('new_password', ['class' => 'form-control', 'placeholder' => '']) !!}
                         <p class="help-block"></p>
                         @if($errors->has('new_password'))
@@ -47,7 +44,7 @@
 
                 <div class="row">
                     <div class="col-xs-12 form-group">
-                        {!! Form::label('new_password_confirmation', 'New password confirmation*', ['class' => 'control-label']) !!}
+                        {!! Form::label('new_password_confirmation', 'Новый пароль еще раз*', ['class' => 'control-label']) !!}
                         {!! Form::password('new_password_confirmation', ['class' => 'form-control', 'placeholder' => '']) !!}
                         <p class="help-block"></p>
                         @if($errors->has('new_password_confirmation'))
