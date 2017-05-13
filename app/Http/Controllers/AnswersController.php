@@ -58,10 +58,10 @@ class AnswersController extends Controller
             return abort(401);
         }
         $request = $this->saveFiles($request);
-        $answer = Answer::create($request->all());
+        Answer::create($request->all());
 
 
-        return redirect()->route('answers.index');
+        return redirect()->route('slides.show',$request->get('slide_id'));
     }
 
 
@@ -102,7 +102,7 @@ class AnswersController extends Controller
         $answer->update($request->all());
 
 
-        return redirect()->route('answers.index');
+        return redirect()->route('slides.show',$request->get('slide_id'));
     }
 
 
@@ -141,7 +141,7 @@ class AnswersController extends Controller
         $answer = Answer::findOrFail($id);
         $answer->delete();
 
-        return redirect()->route('answers.index');
+        return redirect()->back();
     }
 
     /**

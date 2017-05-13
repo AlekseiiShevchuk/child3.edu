@@ -45,7 +45,7 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('is_correct', 'Правильный ли это вариант ответа?*', ['class' => 'control-label']) !!}
                     {!! Form::hidden('is_correct', 0) !!}
-                    {!! Form::checkbox('is_correct', 1, old('is_correct'), ['required' => '']) !!}
+                    {!! Form::checkbox('is_correct', 1, old('is_correct')) !!}
                     <p class="help-block"></p>
                     @if($errors->has('is_correct'))
                         <p class="help-block">

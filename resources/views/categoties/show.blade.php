@@ -47,6 +47,7 @@
                                 <td>{{ $lesson->category->name or '' }}</td>
                                 <td>
                                     @can('lesson_view')
+                                    <a href="{{ route('slides.create') }}?lesson_id={{$lesson->id}}" class="btn btn-xs btn-success">Добавить слайд к этому уроку</a>
                                     <a href="{{ route('lessons.show',[$lesson->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
                                     @endcan
                                     @can('lesson_edit')

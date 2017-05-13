@@ -128,7 +128,7 @@ class CategotiesController extends Controller
         $categoty = Categoty::findOrFail($id);
         $categoty->delete();
 
-        return redirect()->route('categoties.index');
+        return redirect()->back();
     }
 
     /**

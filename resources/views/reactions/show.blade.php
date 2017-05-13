@@ -22,7 +22,7 @@
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.reactions.fields.audio')</th>
-                            <td>@if($reaction->audio)<a href="{{ asset('uploads/' . $reaction->audio) }}" target="_blank">Download file</a>@endif</td>
+                            <td>@if($reaction->audio)<a href="{{ asset('uploads/' . $reaction->audio) }}" target="_blank">Скачать файл</a>@endif</td>
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.reactions.fields.content')</th>

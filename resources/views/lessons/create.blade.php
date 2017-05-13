@@ -37,7 +37,12 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('category_id', 'К какой категории относится урок*', ['class' => 'control-label']) !!}
-                    {!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    @if(!empty(request()->get('category_id')))
+                        {!! Form::hidden('category_id', request()->get('category_id')) !!}
+                        {!! Form::select('category_id', $categories, request()->get('category_id'), ['class' => 'form-control select2', 'disabled']) !!}
+                    @else
+                        {!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    @endif
                     <p class="help-block"></p>
                     @if($errors->has('category_id'))
                         <p class="help-block">

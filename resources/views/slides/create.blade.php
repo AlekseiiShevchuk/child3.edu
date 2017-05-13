@@ -62,7 +62,12 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('lesson_id', 'Какому уроку принадлежит слайд*', ['class' => 'control-label']) !!}
-                    {!! Form::select('lesson_id', $lessons, request()->get('slide') ?? old('lesson_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    @if(!empty(request()->get('lesson_id')))
+                        {!! Form::hidden('lesson_id', request()->get('lesson_id')) !!}
+                        {!! Form::select('lesson_id', $lessons, request()->get('lesson_id'), ['class' => 'form-control select2', 'disabled']) !!}
+                    @else
+                    {!! Form::select('lesson_id', $lessons, old('lesson_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    @endif
                     <p class="help-block"></p>
                     @if($errors->has('lesson_id'))
                         <p class="help-block">
@@ -75,7 +80,7 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('is_active', 'Активен ли слайд (доступен ли для просмотра пользователями)*', ['class' => 'control-label']) !!}
                     {!! Form::hidden('is_active', 0) !!}
-                    {!! Form::checkbox('is_active', 1, false, ['required' => '']) !!}
+                    {!! Form::checkbox('is_active', 1, false) !!}
                     <p class="help-block"></p>
                     @if($errors->has('is_active'))
                         <p class="help-block">

@@ -57,7 +57,7 @@ class LessonsController extends Controller
         $lesson = Lesson::create($request->all());
 
 
-        return redirect()->route('lessons.index');
+        return redirect()->route('categoties.index');
     }
 
 
@@ -97,7 +97,7 @@ class LessonsController extends Controller
         $lesson->update($request->all());
 
 
-        return redirect()->route('lessons.index');
+        return redirect()->route('categoties.index');
     }
 
 
@@ -137,7 +137,7 @@ class LessonsController extends Controller
         $lesson = Lesson::findOrFail($id);
         $lesson->delete();
 
-        return redirect()->route('lessons.index');
+        return redirect()->back();
     }
 
     /**

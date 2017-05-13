@@ -45,37 +45,37 @@
             <li class="{{ $request->segment(1) == 'categoties' ? 'active' : '' }}">
                 <a href="{{ route('categoties.index') }}">
                     <i class="fa fa-align-left"></i>
-                    <span class="title">@lang('quickadmin.categoties.title')</span>
+                    <span class="title">Категории/Уроки/Слайды</span>
                 </a>
             </li>
             @endcan
             
-            @can('lesson_access')
-            <li class="{{ $request->segment(1) == 'lessons' ? 'active' : '' }}">
-                <a href="{{ route('lessons.index') }}">
-                    <i class="fa fa-question"></i>
-                    <span class="title">@lang('quickadmin.lessons.title')</span>
-                </a>
-            </li>
-            @endcan
-            
-            @can('slide_access')
-            <li class="{{ $request->segment(1) == 'slides' ? 'active' : '' }}">
-                <a href="{{ route('slides.index') }}">
-                    <i class="fa fa-slideshare"></i>
-                    <span class="title">@lang('quickadmin.slides.title')</span>
-                </a>
-            </li>
-            @endcan
-            
-            @can('answer_access')
-            <li class="{{ $request->segment(1) == 'answers' ? 'active' : '' }}">
-                <a href="{{ route('answers.index') }}">
-                    <i class="fa fa-arrows-alt"></i>
-                    <span class="title">@lang('quickadmin.answers.title')</span>
-                </a>
-            </li>
-            @endcan
+            {{--@can('lesson_access')--}}
+            {{--<li class="{{ $request->segment(1) == 'lessons' ? 'active' : '' }}">--}}
+                {{--<a href="{{ route('lessons.index') }}">--}}
+                    {{--<i class="fa fa-question"></i>--}}
+                    {{--<span class="title">@lang('quickadmin.lessons.title')</span>--}}
+                {{--</a>--}}
+            {{--</li>--}}
+            {{--@endcan--}}
+            {{----}}
+            {{--@can('slide_access')--}}
+            {{--<li class="{{ $request->segment(1) == 'slides' ? 'active' : '' }}">--}}
+                {{--<a href="{{ route('slides.index') }}">--}}
+                    {{--<i class="fa fa-slideshare"></i>--}}
+                    {{--<span class="title">@lang('quickadmin.slides.title')</span>--}}
+                {{--</a>--}}
+            {{--</li>--}}
+            {{--@endcan--}}
+            {{----}}
+            {{--@can('answer_access')--}}
+            {{--<li class="{{ $request->segment(1) == 'answers' ? 'active' : '' }}">--}}
+                {{--<a href="{{ route('answers.index') }}">--}}
+                    {{--<i class="fa fa-arrows-alt"></i>--}}
+                    {{--<span class="title">@lang('quickadmin.answers.title')</span>--}}
+                {{--</a>--}}
+            {{--</li>--}}
+            {{--@endcan--}}
             
             @can('reaction_access')
             <li class="{{ $request->segment(1) == 'reactions' ? 'active' : '' }}">
@@ -94,7 +94,7 @@
     <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
         <a href="{{ route('auth.change_password') }}">
             <i class="fa fa-key"></i>
-            <span class="title">Change password</span>
+            <span class="title">Сменить пароль</span>
         </a>
     </li>
 

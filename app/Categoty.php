@@ -14,7 +14,7 @@ class Categoty extends Model
     protected $fillable = ['name'];
     
     
-    public function lesson() {
+    public function lessons() {
         return $this->hasMany(Lesson::class, 'category_id');
     }
 }

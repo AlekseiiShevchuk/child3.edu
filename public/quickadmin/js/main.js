@@ -13,6 +13,9 @@ $(document).ready(function () {
         activeSub.parent().parent().addClass('open');
     }
     window.dtDefaultOptions = {
+        "language": {
+            "url": "https://cdn.datatables.net/plug-ins/1.10.15/i18n/Russian.json"
+        },
         retrieve: true,
         dom: 'lBfrtip<"actions">',
         columnDefs: [],
@@ -87,7 +90,7 @@ $(document).ready(function () {
     }
 
     $(document).on('click', '.js-delete-selected', function () {
-        if (confirm('Are you sure')) {
+        if (confirm('Вы уверенны?')) {
             var ids = [];
 
             $(this).closest('.actions').siblings('.datatable, .ajaxTable').find('tbody tr.selected').each(function () {

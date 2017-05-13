@@ -59,10 +59,10 @@ class SlidesController extends Controller
             return abort(401);
         }
         $request = $this->saveFiles($request);
-        $slide = Slide::create($request->all());
+        Slide::create($request->all());
 
 
-        return redirect()->route('slides.index');
+        return redirect()->route('lessons.show',['id' => $request->get('lesson_id')]);
     }
 
 
@@ -104,7 +104,7 @@ class SlidesController extends Controller
         $slide->update($request->all());
 
 
-        return redirect()->route('slides.index');
+        return redirect()->route('lessons.show',['id' => $request->get('lesson_id')]);
     }
 
 
@@ -144,7 +144,7 @@ class SlidesController extends Controller
         $slide = Slide::findOrFail($id);
         $slide->delete();
 
-        return redirect()->route('slides.index');
+        return redirect()->back();
     }
 
     /**

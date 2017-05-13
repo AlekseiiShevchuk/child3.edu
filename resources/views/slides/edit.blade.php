@@ -39,7 +39,7 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('audio', 'Аудио файл который будет автоматически проигран при открытии слайда', ['class' => 'control-label']) !!}
                     @if ($slide->audio)
-                        <a href="{{ asset('uploads/' . $slide->audio) }}" target="_blank">Download file</a>
+                        <a href="{{ asset('uploads/' . $slide->audio) }}" target="_blank">Скачать файл</a>
                     @endif
                     {!! Form::file('audio', ['class' => 'form-control']) !!}
                     {!! Form::hidden('audio_max_size', 8) !!}
@@ -79,7 +79,7 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('is_active', 'Активен ли слайд (доступен ли для просмотра пользователями)*', ['class' => 'control-label']) !!}
                     {!! Form::hidden('is_active', 0) !!}
-                    {!! Form::checkbox('is_active', 1, old('is_active'), ['required' => '']) !!}
+                    {!! Form::checkbox('is_active', 1, old('is_active')) !!}
                     <p class="help-block"></p>
                     @if($errors->has('is_active'))
                         <p class="help-block">

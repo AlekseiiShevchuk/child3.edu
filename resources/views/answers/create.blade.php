@@ -41,7 +41,7 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('is_correct', 'Правильный ли это вариант ответа?*', ['class' => 'control-label']) !!}
                     {!! Form::hidden('is_correct', 0) !!}
-                    {!! Form::checkbox('is_correct', 1, false, ['required' => '']) !!}
+                    {!! Form::checkbox('is_correct', 1, false) !!}
                     <p class="help-block"></p>
                     @if($errors->has('is_correct'))
                         <p class="help-block">
@@ -53,7 +53,12 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('slide_id', 'Для какого слайда ответ*', ['class' => 'control-label']) !!}
-                    {!! Form::select('slide_id', $slides, old('slide_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    @if(!empty(request()->get('slide_id')))
+                        {!! Form::hidden('slide_id', request()->get('slide_id')) !!}
+                        {!! Form::select('slide_id', $slides, request()->get('slide_id'), ['class' => 'form-control select2',  'disabled']) !!}
+                    @else
+                        {!! Form::select('slide_id', $slides, old('slide_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    @endif
                     <p class="help-block"></p>
                     @if($errors->has('slide_id'))
                         <p class="help-block">

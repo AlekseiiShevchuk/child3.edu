@@ -42,7 +42,7 @@
 
                                 <td>{{ $slide->slider_type }}</td>
                                 <td>{{ $slide->name }}</td>
-                                <td>@if($slide->audio)<a href="{{ asset('uploads/' . $slide->audio) }}" target="_blank">Download file</a>@endif</td>
+                                <td>@if($slide->audio)<a href="{{ asset('uploads/' . $slide->audio) }}" target="_blank">Скачать файл</a>@endif</td>
                                 <td>{!! $slide->content !!}</td>
                                 <td>{{ $slide->lesson->name or '' }}</td>
                                 <td>{{ Form::checkbox("is_active", 1, $slide->is_active == 1, ["disabled"]) }}</td>

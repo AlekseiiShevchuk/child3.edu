@@ -39,7 +39,7 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('audio', 'Аудио файл для автоматического проигрывания при открытии окна с реакцией на ответ', ['class' => 'control-label']) !!}
                     @if ($reaction->audio)
-                        <a href="{{ asset('uploads/' . $reaction->audio) }}" target="_blank">Download file</a>
+                        <a href="{{ asset('uploads/' . $reaction->audio) }}" target="_blank">Скачать файл</a>
                     @endif
                     {!! Form::file('audio', ['class' => 'form-control']) !!}
                     {!! Form::hidden('audio_max_size', 8) !!}
